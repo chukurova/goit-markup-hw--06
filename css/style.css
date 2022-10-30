@@ -37,12 +37,15 @@ img {
 }
 .nav-link {
     color: var(--heading-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-right: 93px;
     padding-top: 24px;
     padding-bottom: 25px;
 }
 .header-link {
     color: var(--heading-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-bottom: 32px;
 }
 .header-link:hover, .header-link:focus {
     color: var(--bright-color);
@@ -72,6 +75,8 @@ nav {
     display: flex;
     align-items: center;
     color: var(--text-color);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    padding-bottom: 32px;
 }
 .phone-link:hover .contact-link, .phone-link:focus .contact-link {
     color: var(--bright-color);
@@ -93,7 +98,6 @@ nav {
     display: flex;
     justify-content: flex-start;
     padding-top: 32px;
-    padding-bottom: 32px;
 }
 .menu-item:not(:last-child) {
     margin-right: 50px;
@@ -107,6 +111,7 @@ nav {
 }
 .icon-header {
     fill: var(--text-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
     margin-right: 10px;
 }
 .contact-link:hover .icon-header, 
@@ -137,6 +142,7 @@ nav {
 .hero-button {
     color: var(--main-color);
     background-color: var(--bright-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
@@ -217,8 +223,29 @@ nav {
     align-items: center;
     justify-content: space-between;
 }
+.project-gallery {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
 .project-gallery:not(:last-child) {
     margin-right: 30px;
+}
+.img-heading {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.17;
+    text-transform: uppercase;
+    color: var(--main-color);
+    margin: 27px auto;
+    text-align: center;
+}
+.img-container {
+    width: 100%;
+    background-color: rgba(47, 48, 58, 0.8);
+    position: absolute;
+    top:224px;
 }
 .team-section {
     background-color: var(--bg-color);
@@ -272,6 +299,7 @@ nav {
     width: 44px;
     height: 44px;
     background-color: var(--main-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -284,6 +312,7 @@ nav {
     width: 22px;
     height: 22px;
     fill: rgba(175, 177, 184, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sm-link:hover .sm-icon, .sm-link:focus .sm-icon {
     fill: var(--main-color);
@@ -307,6 +336,7 @@ nav {
     width: 170px;
     height: 92px;
     border: 1px solid #AFB1B8;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 4%;
 }
@@ -318,6 +348,7 @@ nav {
     width: 106px;
     height: 60px;
     fill: rgba(175, 177, 184, 1);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link:hover .client,.client-link:focus .client  {
     fill: var(--bright-color);
@@ -374,6 +405,7 @@ footer {
     width: 44px;
     height: 44px;
     background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -415,10 +447,12 @@ header {
     font-weight: 500;
     letter-spacing: 0.03em;
     line-height: 1.63;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover, .filter-button:focus{
     color: var(--main-color);
     background-color: var(--bright-color);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -428,22 +462,46 @@ header {
     display: flex;
     gap: 30px;
     flex-wrap: wrap;
+    z-index: 1000;
 }
 .gallery-images {
     margin-left: 0;
     box-sizing: border-box;
+    position: relative;
+}
+.overlay {
+    display: initial;
+    position: absolute;
+    top: 404px;
+    transition: transform 250ms linear;
+    color: transparent;
+}
+.gallery-images:hover .overlay {
+    display: block;
+    transform: translateY(-404px);
+    background-color: rgba(33, 150, 243, 0.9);
+    font-family: Roboto sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: var(--main-color);
+    padding: 63px 24px;
+    z-index: 0;
 }
 .gallery-images:hover a, .gallery-images:focus a{
     display: block;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-
 .gallery-border {
     padding: 20px 24px;
     border: 1px solid var(--img-border);
     border-top: none;
+    z-index: 50;
 }
 .gallery-heading {
     font-size: 18px;
@@ -470,4 +528,58 @@ header {
     text-align: center;
     margin-top: 0;
     margin-bottom: 50px;
+}
+.backdrop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: opacity 500ms linear, visibility 500ms linear;
+    transform: translate(50deg);
+}
+.modal {
+    width: 528px;
+    height: 581px;
+    background-color: var(--main-color);
+    border-radius: 4px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-color: rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+.backdrop.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+.header-link.current {
+    color: var(--bright-color);
+    position: relative;
+}
+.current::after {
+    content:'';
+    background: var(--bright-color);
+    border-radius: 2px;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
 }

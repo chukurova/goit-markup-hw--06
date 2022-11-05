@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Homework5_Webstudio</title>
+    <title>Homework6_Webstudio</title>
   </head>
   <body>
     <header>
@@ -377,6 +377,35 @@
             <use href="images/icons.svg#icon-close-btn"></use>
           </svg>
         </button>
+        <h2 class="heading-modal-btn">Залиште свої дані, ми вам передзвонимо</h2>
+        <form action=" " method="post">
+          <ul>
+            <li class="input-list list-style-none">
+              <label for="name" class="modal-label">Ім'я</label>
+              <input type="text" id="name" name="user_name" class="input-data" required autofocus>
+              <svg class="input-icon" width="12" height="12">
+                <use class="icon-img" href="images/icons.svg#icon-name"></use>
+              </svg>
+            </li>
+            <li class="input-list list-style-none">
+              <label for="phone" class="modal-label">Телефон</label>
+              <input type="tel" id="phone" name="user_phone" class="input-data" required autofocus>
+            </li>
+            <li class="input-list list-style-none">
+              <label for="mail" class="modal-label">Пошта</label>
+              <input type="email" id="mail" name="user_email" class="input-data" required autofocus>
+            </li>
+            <li class="input-list list-style-none">
+              <label for="msg" class="modal-label">Коментар</label>
+              <textarea id="msg" name="user_message" class="input-data comment" autofocus placeholder="Введіть текст"></textarea>
+            </li>
+          </ul>
+          <div class="checkbox">
+            <input type="checkbox" name=" " value=" " checked class="terms-checked">
+            <p class="terms">Погоджуюся з розсилкою та приймаю <a href="" class="link-style-none terms-links"><span class="terms-link">Умови договору</span></a></p>
+          </div>
+          <button type="submit" class="send-form-btn">Відправити</button>
+        </form>
       </div>
     </div>
     <script src="js/modal.js"></script>
